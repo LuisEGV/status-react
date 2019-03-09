@@ -508,7 +508,7 @@ if is_macos; then
         # Change dependency rpath in $dylib to point to $targetReplacementPath
         local targetReplacementPath=$(echo $targetDepDylib | sed -e "s|$targetPath|$replacementPath|")
         echo "${indent}Updating $dylib to point to $targetReplacementPath"
-        install_name_tool -change "$depDylib" "$targetReplacementPath" "$dylib" "  ${indent}"
+        install_name_tool -change "$depDylib" "$targetReplacementPath" "$dylib"
       fi
     done
   }
